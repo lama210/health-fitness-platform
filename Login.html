@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="login.css">
+</head>
+<style>
+            body{
+    background-image: url(images/fit.jpg);
+      background-size: cover; /* This property ensures that the background image covers the entire body */
+      background-repeat: no-repeat; /* This property prevents the background image from repeating */
+} 
+
+.login-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    background-color: #fff;
+}
+
+.login-container h2 {
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: bold;
+    display: flex;
+    align-items: center; /* Align icon and text vertically */
+}
+
+.form-group label .icon {
+    margin-right: 10px; /* Add spacing between icon and text */
+}
+
+.form-control {
+    border-radius: 4px;
+    border: 1px solid #ced4da;
+}
+
+.login-btn, .register-now-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none; /* Removed underline for anchor tags */
+}
+
+.login-btn:hover, .register-now-btn:hover {
+    background-color: #0056b3;
+}
+
+.login-btn .icon, .register-now-btn .icon {
+    margin-right: 5px; /* Adjust icon spacing */
+}
+
+body {
+    background-color: #f8f9fa;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.password-wrapper {
+    position: relative;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 15px;
+    top: 70%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #666;
+    z-index: 2;
+}
+
+.password-toggle:hover {
+    color: #333;
+}
+
+/* Add padding to prevent text overlap */
+#password {
+    padding-right: 40px;
+}
+.new-user-label {
+    margin-top: 1rem; /* Space from elements above */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem; /* Tight spacing between text and button */
+}
+
+.new-user-label p {
+    margin: 0; /* Remove default paragraph margins */
+    font-size: 0.9rem;
+    line-height: 1; /* Reduce text height */
+    transform: translateY(2px); /* Fine-tune vertical position */
+}
+
+.register-now-btn {
+    margin-top: 0 !important; /* Remove button's top margin */
+    padding: 8px 12px; /* Smaller button padding */
+}
+
+</style>
+<body>
+
+<div class="container mt-5">
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="login-form" action="login.php" method="post">
+            <div class="form-group">
+                <label for="email"><i class="fas fa-envelope icon"></i> Email:</label>
+                <input type="email"  class="form-control" id="email" name="email" required>
+            </div>
+            <div class="form-group password-wrapper">
+                <label for="password"><i class="fas fa-lock"></i> Password</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+                <i class="fas fa-eye-slash password-toggle" id="togglePassword"></i>
+            </div>
+            <button type="submit" name="login" class="btn btn-primary login-btn"><i class="fas fa-sign-in-alt icon"></i> Login</button>
+        </form>
+        <div class="new-user-label">
+            <p>New User?</p>
+            <a href="register1.php" class="btn btn-success register-now-btn"><i class="fas fa-user-plus icon"></i> Register now</a>
+            <a href="index.php" class="btn btn-light mt-3 home-button" style="margin-left: 105px;"><i class="fas fa-home"></i> Home</a>
+
+        </div>
+        <div id="loginErrorAlert" class="alert alert-danger alert-dismissible fade show" role="alert" style="display: none;">
+  <strong>Error:</strong> Invalid email or password.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+    </div>
+</div>
+<!-- Error Modal -->
+
+<!-- Bootstrap JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    // Password toggle
+    document.getElementById('togglePassword').addEventListener('click', function(e) {
+        const password = document.getElementById('password');
+        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+        this.classList.toggle('fa-eye-slash');
+        this.classList.toggle('fa-eye');
+    });
+
+    // Show error alert if ?error=1 exists in URL
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('error')) {
+        document.getElementById('loginErrorAlert').style.display = 'block';
+    }
+</script>
+
+
+ 
+
+</body>
+</html>

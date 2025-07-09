@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "healthfit",
+			"path": "."
+		},
+		{
+			"name": "PHPMailer",
+			"path": "../SMS/PHPMailer"
+		}
+	],
+	"settings": {}
+}

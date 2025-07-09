@@ -1,0 +1,53 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<div class="container my-5">
+    <h1 class="text-center mb-4">Choose Your Subscription Plan</h1>
+    <div class="row justify-content-center">
+
+        <!-- Daily Plan -->
+        <div class="col-md-4">
+            <div class="card text-center shadow-sm mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Daily Plan</h5>
+                    <p class="card-text">$5 / 1 Day</p>
+                    <form method="POST" action="subscribe.php">
+                        <input type="hidden" name="service_id" value="<?php echo htmlspecialchars($_GET['service_id']); ?>">
+                        <input type="hidden" name="plan_type" value="day">
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Weekly Plan -->
+        <div class="col-md-4">
+            <div class="card text-center shadow-sm mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Weekly Plan</h5>
+                    <p class="card-text">$25 / 7 Days</p>
+                    <form method="POST" action="subscribe.php">
+                        <input type="hidden" name="service_id" value="<?php echo htmlspecialchars($_GET['service_id']); ?>">
+                        <input type="hidden" name="plan_type" value="week">
+                        <button type="submit" class="btn btn-success">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Monthly Plan -->
+        <div class="col-md-4">
+            <div class="card text-center shadow-sm mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Monthly Plan</h5>
+                    <p class="card-text">$80 / 30 Days</p>
+                    <form method="POST" action="subscribe.php">
+                        <input type="hidden" name="service_id" value="<?php echo htmlspecialchars($_GET['service_id']); ?>">
+                        <input type="hidden" name="plan_type" value="month">
+                        <button type="submit" class="btn btn-warning">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,114 @@
+.book-style-container {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.book-info {
+    flex: 1;
+    padding: 30px;
+    border-radius: 8px 0 0 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background-color: #007bff;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.book-info h2 {
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.book-info p {
+    margin-bottom: 20px;
+}
+
+.custom-btn {
+    background-color: #fff;
+    color: #007bff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    animation: fadeIn 1s ease;
+}
+
+.custom-btn:hover {
+    background-color: #f0f0f0;
+    animation: scaleButton 0.3s ease forwards; /* Apply scale animation on hover */
+}
+
+.registration-form {
+    flex: 1;
+    padding: 30px;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.registration-form h2 {
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+.form-control {
+    border-radius: 4px;
+}
+
+.checkbox-label {
+    font-weight: normal;
+}
+
+.register-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    animation: fadeIn 1s ease;
+}
+
+.register-btn:hover {
+    background-color: #0056b3;
+    animation: scaleButton 0.3s ease forwards; /* Apply scale animation on hover */
+}
+
+body {
+    background-color: #67c5e9;
+    margin: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleButton {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}

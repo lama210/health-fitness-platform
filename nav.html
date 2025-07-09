@@ -1,0 +1,79 @@
+<!-- nav.html -->
+<style>
+.navbar-custom {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 1200px; /* Add this to limit the max width */
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 10px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+}
+.logo {
+            height: 100px;
+            width: 100px; 
+            border-radius: 50%; 
+            object-fit:inherit ; 
+            margin-right: 150px;
+        }
+
+        .nav-link {
+            color: white !important;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: 0.3s;
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -5px;
+            width: 0;
+            height: 2px;
+            background: #00f2ff;
+            transition: all 0.3s ease-in-out;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+            left: 0;
+        }
+        .nav-link:hover {
+            color: #00f2ff !important;
+            transform: scale(1.1);
+        }
+    </style>
+    <body>
+<nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container d-flex justify-content-center align-items-center flex-nowrap">
+      <div class="d-flex gap-4 align-items-center">
+        <a href="index.html">
+          <img src="images/12.png" alt="Logo" class="logo">
+        </a>
+        <div class="d-flex gap-4">
+          <a class="nav-link" href="index.html">Home</a>
+          <div class="dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Services
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+              <li><a class="dropdown-item" href="#">Workout Plans</a></li>
+              <li><a class="dropdown-item" href="#">Nutrition Meals</a></li>
+              <li><a class="dropdown-item" href="#">Nutrition & Diet Consulting</a></li>
+            </ul>
+          </div>
+          <a class="nav-link" href="#">Classes</a>
+          <a class="nav-link" href="shop.html">Shop</a>
+          <a class="nav-link" href="#">Our Team</a>
+          <a class="nav-link" href="#">About Us</a>
+        </div>
+        <a href="auth.html" class="cta-button">Get Started</a>
+      </div>
+    </div>
+  </nav>
+    </body>
